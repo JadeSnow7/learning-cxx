@@ -37,7 +37,18 @@ ColorEnum convert_by_pun(Color c) {
 
     TypePun pun;
     // TODO: 补全类型双关转换
-
+    switch (c) {
+        case Color::Red:
+            return COLOR_RED;
+        case Color::Green:
+            return COLOR_GREEN;
+        case Color::Yellow:
+            return COLOR_YELLOW;
+        case Color::Blue:
+            return COLOR_BLUE;
+        default:
+            throw std::invalid_argument("Invalid Color value");
+    }
     return pun.e;
 }
 

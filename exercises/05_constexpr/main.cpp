@@ -1,4 +1,5 @@
 #include "../exercise.h"
+#include <array>
 
 constexpr unsigned long long fibonacci(int i) {
     switch (i) {
@@ -7,7 +8,11 @@ constexpr unsigned long long fibonacci(int i) {
         case 1:
             return 1;
         default:
-            return fibonacci(i - 1) + fibonacci(i - 2);
+            std::array<unsigned long long,2>k={0,1};
+            for(int j=0;j<i;j++){
+                k={k[1],k[0]+k[1]};
+            }
+            return k[0];
     }
 }
 
